@@ -1,6 +1,3 @@
-# httpNote
-basic concept
-
 # 什么是http？作用是什么?
 - http是hyper-text transfer protocol,超文本传入协议；是一种客户端和服务器端进行文件传输通信的协议
 
@@ -11,7 +8,11 @@ HTTP 有两类报文：
 
 - 响应报文----从服务器到客户的回答，见图6-12(b).
 
+<<<<<<< HEAD
+![img](../http.png)
+=======
 ![img](../img/http.PNG)
+>>>>>>> origin/develop
 
 由于 HTTP是面向文本的(text-oriented),因此在报文中的每一个字段都是一些ASCII码串，因而每个字段的长度都是不确定的。
 
