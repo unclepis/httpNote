@@ -59,3 +59,27 @@ HTTP请求报文和响应报文都是由三个部分组成。
 2.请求报文的开始行叫请求行Request-line，由请求方式，URL和http版本号三部分构成。
 3.响应报文的开始行叫状态行status-line，由http版本号，状态码和状态码的简单短语描述构成。
 
+# 关于编码
+## 常用的对特殊字符进行编码和解码的函数，在js中有三种：
+1. encodeURI / decodeURI
+2.encodeURIComponent / decodeURIComponent
+3.escape / unescape
+
+## 使用场景和说明：
+1. escape是对字符串(string)进行编码(而另外两种是对URL)，作用是让它们在所有电脑上可读。
+2. encodeURI 不会转义url中有特殊含义的字符，比如url和query parameter之间的？符号，又比如query parameter之间的&符号和=
+
+		var test ="http://www.cnblogs.com/season-huang/p/3439277.html?name=pis&age=18"
+		// 可以看见html后面有个？连接url和查询变量
+		// 查询变量之间有赋值的=号和连接多个变量的&号
+3.encodeURIComponent 会对所有的特殊字符进行转义
+		
+		var test="http://www.cnblogs.com/season-huang/p/3439277.html? name=pis&age=18 "
+		encodeURI(test) // "http://www.cnblogs.com/season-huang/p/3439277.html?%20name=pis&age=18%20"
+		encodeURIComponent // "http%3A%2F%2Fwww.cnblogs.com%2Fseason-huang%2Fp%2F3439277.html%3F%20name%3Dpis%26age%3D18%20"
+
+## 使用场景说明
+1. 从上面的例子中可以看出这三个方法的区别
+1）如果你单纯的想对字符串进行编码解码。和url没有毛线关系，那就用escape和unescape
+2）如果你想解析url中的传入的变量，那么使用encodeURIComponent，因为它转码的范围比较大，包括了？&等url中有特殊含义的字符都会被转义
+3）如果你想解析整个url，那就推线使用encodeURI
