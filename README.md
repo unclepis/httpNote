@@ -61,18 +61,18 @@ HTTP请求报文和响应报文都是由三个部分组成。
 
 # 关于编码
 ## 常用的对特殊字符进行编码和解码的函数，在js中有三种：
-1. encodeURI / decodeURI
-2.encodeURIComponent / decodeURIComponent
-3.escape / unescape
+- encodeURI / decodeURI
+- encodeURIComponent / decodeURIComponent
+- escape / unescape
 
 ## 使用场景和说明：
-1. escape是对字符串(string)进行编码(而另外两种是对URL)，作用是让它们在所有电脑上可读。
-2. encodeURI 不会转义url中有特殊含义的字符，比如url和query parameter之间的？符号，又比如query parameter之间的&符号和=
+- 1. escape是对字符串(string)进行编码(而另外两种是对URL)，作用是让它们在所有电脑上可读。
+- 2. encodeURI 不会转义url中有特殊含义的字符，比如url和query parameter之间的？符号，又比如query parameter之间的&符号和=
 
 		var test ="http://www.cnblogs.com/season-huang/p/3439277.html?name=pis&age=18"
 		// 可以看见html后面有个？连接url和查询变量
 		// 查询变量之间有赋值的=号和连接多个变量的&号
-3.encodeURIComponent 会对所有的特殊字符进行转义
+- 3.encodeURIComponent 会对所有的特殊字符进行转义
 		
 		var test="http://www.cnblogs.com/season-huang/p/3439277.html? name=pis&age=18 "
 		encodeURI(test) // "http://www.cnblogs.com/season-huang/p/3439277.html?%20name=pis&age=18%20"
