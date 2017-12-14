@@ -79,7 +79,9 @@ HTTP请求报文和响应报文都是由三个部分组成。
 		encodeURIComponent // "http%3A%2F%2Fwww.cnblogs.com%2Fseason-huang%2Fp%2F3439277.html%3F%20name%3Dpis%26age%3D18%20"
 
 ## 使用场景说明
+
 1. 从上面的例子中可以看出这三个方法的区别
-1）如果你单纯的想对字符串进行编码解码。和url没有毛线关系，那就用escape和unescape
-2）如果你想解析url中的传入的变量，那么使用encodeURIComponent，因为它转码的范围比较大，包括了？&等url中有特殊含义的字符都会被转义
-3）如果你想解析整个url，那就推线使用encodeURI
+
+- 如果你单纯的想对字符串进行编码解码。和url没有毛线关系，那就用escape和unescape
+- 如果你想解析url中的传入的变量，那么使用encodeURIComponent，因为它转码的范围比较大，包括了？&等url中有特殊含义的字符都会被转义
+- 如果你想解析整个url，那就推线使用encodeURI
